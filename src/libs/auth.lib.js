@@ -8,7 +8,7 @@ const LIVE_OF_COOKIE_ONE_DAY = 1;
  * @param {string} token
  */
 export const setAuthData = (token) => {
-  Cookies.set(settings.authCookieName, JSON.stringify(token), { expires: LIVE_OF_COOKIE_ONE_DAY });
+  Cookies.set(settings.authCookieName, token, { expires: LIVE_OF_COOKIE_ONE_DAY });
 };
 
 /**

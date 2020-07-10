@@ -1,1 +1,1 @@
-export * from './CustomInput.scss';
+export * from './CustomInput';

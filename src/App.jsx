@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { PrivateRouteContainer } from './containers/PrivateRoute';
 // routes
 import routes from './routes';
+// sore
+import { setAuthFromCookie } from './store/auth';
 // pages
 import SignIn from './pages/SignIn';
 import Main from './pages/Main';
@@ -11,7 +13,7 @@ import Main from './pages/Main';
 import './App.css';
 
 const App = () => {
-  // store.dispatch(setAuthFromCookie());
+  setAuthFromCookie();
   return (
     <BrowserRouter>
       <Switch>
