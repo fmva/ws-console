@@ -1,0 +1,29 @@
+@import '../../styles/vars';
+
+.notification-window {
+  background-color: $errorMessageColor;
+  padding: 10px;
+  box-shadow: 0 0 5px $boxShadowColor;
+  border-radius: $mainBorderRadius;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  &__close {
+    padding-left: 10px;
+  }
+
+  &__message {
+    padding-top: 10px;
+  }
+}

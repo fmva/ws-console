@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 // styles
 import './CustomButton.scss';
 
-export const CustomButton = ({ title, type, onClick }) => {
+export const CustomButton = ({ title, type, loading, onClick }) => {
   return (
     <button className='custom-button' type={type} onClick={onClick}>
-      {title}
+      {loading ? 'loading' : title}
     </button>
   );
 };
@@ -14,10 +14,12 @@ export const CustomButton = ({ title, type, onClick }) => {
 CustomButton.defaultProps = {
   type: 'submit',
   onClick: null,
+  loading: false,
 };
 
 CustomButton.propTypes = {
   title: PropTypes.string.isRequired,
   onClick: PropTypes.func,
+  loading: PropTypes.bool,
   type: PropTypes.oneOf(['submit', 'reset', 'button']),
 };

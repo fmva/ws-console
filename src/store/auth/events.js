@@ -13,3 +13,7 @@ export const setAuthToken = createEvent('set token');
  */
 export const setAuthError = createEvent('set authorization error');
 export const resetAuthError = createEvent('reset authorization error');
+/**
+ * @param {boolean} loading
+ */
+export const setAuthLoading = createEvent('set authorization loading');

@@ -11,7 +11,7 @@ import routes from '../../routes';
 // dictionary
 import { getDictionaryValue } from '../../dictionary';
 // store
-import { $authError, $auth, signInUserFx, resetAuthError } from '../../store/auth';
+import { $authError, $auth, $authLoading, signInUserFx, resetAuthError } from '../../store/auth';
 // styles
 import './SignIn.scss';
 
@@ -43,6 +43,7 @@ const validateFields = (login = '', password = '') => {
 export const SignIn = () => {
   const auth = useStore($auth);
   const authError = useStore($authError);
+  const authLoading = useStore($authLoading);
   const history = useHistory();
 
   const [login, setLogin] = useState('');
@@ -81,14 +82,16 @@ export const SignIn = () => {
           value={login}
           onChange={onLoginChange}
           errorMessage={errors.login}
+          disabled={authLoading}
         />
         <CustomInput
           title={getDictionaryValue('password')}
           value={password}
           onChange={onPasswordChange}
           errorMessage={errors.password}
+          disabled={authLoading}
         />
-        <CustomButton title={getDictionaryValue('signIn')} />
+        <CustomButton title={getDictionaryValue('signIn')} loading={authLoading} />
       </form>
     </div>
   );

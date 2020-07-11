@@ -3,12 +3,19 @@ import PropTypes from 'prop-types';
 // styles
 import './CustomInput.scss';
 
-export const CustomInput = React.memo(({ title, value, onChange, type, maxLength, errorMessage }) => {
+export const CustomInput = React.memo(({ title, value, onChange, type, disabled, maxLength, errorMessage }) => {
   return (
     <div className='custom-input'>
       <div className='custom-input__title'>{title}</div>
       {errorMessage !== '' && <div>{errorMessage}</div>}
-      <input className='custom-input__input' type={type} value={value} onChange={onChange} maxLength={maxLength} />
+      <input
+        className='custom-input__input'
+        type={type}
+        value={value}
+        onChange={onChange}
+        maxLength={maxLength}
+        disabled={disabled}
+      />
     </div>
   );
 });
@@ -18,6 +25,7 @@ CustomInput.defaultProps = {
   type: 'text',
   maxLength: null,
   errorMessage: '',
+  disabled: false,
 };
 
 CustomInput.propTypes = {
@@ -27,4 +35,5 @@ CustomInput.propTypes = {
   maxLength: PropTypes.number,
   title: PropTypes.string,
   errorMessage: PropTypes.string,
+  disabled: PropTypes.bool,
 };

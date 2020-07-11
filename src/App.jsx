@@ -9,8 +9,8 @@ import { setAuthFromCookie } from './store/auth';
 // pages
 import SignIn from './pages/SignIn';
 import Main from './pages/Main';
-
-import './App.css';
+// styles
+import './styles/common.scss';
 
 const App = () => {
   setAuthFromCookie();

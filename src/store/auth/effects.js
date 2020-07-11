@@ -1,12 +1,16 @@
 import { createEffect } from 'effector';
 // events
-import { setAuth, setAuthError } from './events';
+import { setAuth, setAuthError, setAuthLoading } from './events';
 // routes
 import routes from '../../routes';
 // services
 import { signIn } from '../../services';
 // libs
 import { setAuthData, getAuthData, removeAuthData } from '../../libs';
+// utils
+import { multipleFetchUrl } from '../../utils';
+
+const LOGIN_COUNT = 3;
 
 /**
  * log in action
@@ -18,12 +22,12 @@ import { setAuthData, getAuthData, removeAuthData } from '../../libs';
 export const signInUserFx = createEffect({
   async handler(params) {
     const { login, password, history } = params;
+    setAuthLoading(true);
     try {
-      const data = await signIn(login, password);
+      const data = await multipleFetchUrl(signIn, { password, username: login }, LOGIN_COUNT);
       setAuthData(data.headers['x-test-app-jwt-token']);
       setAuth(true);
       history.push(routes.main);
-      console.log('data', data);
     } catch (err) {
       removeAuthData();
       setAuth(false);
@@ -31,5 +35,6 @@ export const signInUserFx = createEffect({
         setAuthError(err.response.data.description);
       }
     }
+    setAuthLoading(false);
   },
 });

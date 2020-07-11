@@ -21,6 +21,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/button-has-type": "off",
     "react/forbid-prop-types": "off",
+    "no-await-in-loop": "off",
     "react/require-default-props": "warn",
     "arrow-body-style": ["warn"],
     "import/prefer-default-export": ["off"],
