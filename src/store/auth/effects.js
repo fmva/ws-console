@@ -6,7 +6,8 @@ import routes from '../../routes';
 // services
 import { signIn } from '../../services';
 // libs
-import { setAuthData, getAuthData, removeAuthData } from '../../libs';
+import { setAuthData } from '../../libs';
+import { removeToken } from './auth.store.libs';
 // utils
 import { multipleFetchUrl } from '../../utils';
 
@@ -29,8 +30,7 @@ export const signInUserFx = createEffect({
       setAuth(true);
       history.push(routes.main);
     } catch (err) {
-      removeAuthData();
-      setAuth(false);
+      removeToken();
       if (err && err.response && err.response.data && err.response.data.description) {
         setAuthError(err.response.data.description);
       }

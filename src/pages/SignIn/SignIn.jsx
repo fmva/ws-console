@@ -87,6 +87,7 @@ export const SignIn = () => {
         <CustomInput
           title={getDictionaryValue('password')}
           value={password}
+          type='password'
           onChange={onPasswordChange}
           errorMessage={errors.password}
           disabled={authLoading}

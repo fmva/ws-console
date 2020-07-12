@@ -1,7 +1,7 @@
 // store
 import { setAuth } from './events';
 // libs
-import { getAuthData } from '../../libs';
+import { getAuthData, removeAuthData } from '../../libs';
 
 /**
  * set authentication from cookie
@@ -15,4 +15,9 @@ export const setAuthFromCookie = () => {
   } catch (e) {
     setAuth(false);
   }
+};
+
+export const removeToken = () => {
+  removeAuthData();
+  setAuth(false);
 };

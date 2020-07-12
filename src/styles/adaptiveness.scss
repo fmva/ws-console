@@ -1,0 +1,33 @@
+
+$minDesktopWidth: 1281px;
+$minLaptopWidthHigherBorder: 1025px;
+$minLaptopWidthLowerBorder: $minLaptopWidthHigherBorder - 1;
+$minTabletWidthHigherBorder: 768px;
+$minTabletWidthLowerBorder: $minTabletWidthHigherBorder - 1;
+$maxMobileWidthHigherBorder: 481px;
+$maxMobileWidthLowerBorder: $maxMobileWidthHigherBorder - 1;
+$minMobileWidth: 320px;
+
+@mixin respond-to($media) {
+  @if $media == desktop {
+    @media only screen and (min-width: $minDesktopWidth) { @content; }
+  }
+  @else if $media == laptop {
+    @media only screen and (min-width: $minLaptopWidthHigherBorder ) and (max-width: $minDesktopWidth) { @content; }
+  }
+  @else if $media == tablet-portrait {
+    @media only screen and (min-width: $minTabletWidthHigherBorder) and (max-width: $minLaptopWidthLowerBorder) and (orientation: portrait) { @content; }
+  }
+  @else if $media == tablet-landscape {
+    @media only screen and (min-width: $minTabletWidthHigherBorder) and (max-width: $minLaptopWidthLowerBorder) and (orientation: landscape) { @content; }
+  }
+  @else if $media == high-tablet {
+    @media only screen and (min-width: $minTabletWidthHigherBorder) and (max-width: $minLaptopWidthLowerBorder) { @content; }
+  }
+  @else if $media == low-tablet {
+    @media only screen and (min-width: $maxMobileWidthHigherBorder) and (max-width: $minTabletWidthLowerBorder) { @content; }
+  }
+  @else if $media == mobile {
+    @media only screen and (max-width: $maxMobileWidthLowerBorder) { @content; }
+  }
+}

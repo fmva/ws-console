@@ -1,8 +1,24 @@
+@import '../../styles/adaptiveness';
+
 .notification-container {
+  @mixin a-notification-container {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
+
   width: 350px;
   position: absolute;
   right: 10px;
   top: 10px;
+
+  @include respond-to(low-tablet) {
+    @include a-notification-container;
+  }
+  @include respond-to(mobile) {
+    @include a-notification-container;
+  }
 
   &__item {
     padding: 10px;
