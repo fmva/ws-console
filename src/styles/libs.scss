@@ -1,0 +1,37 @@
+@import './vars';
+@import './adaptiveness';
+
+%main {
+  position: relative;
+  height: 100vh;
+  padding: $minPadding;
+}
+
+%row {
+  padding: $minPadding 0;
+}
+
+%link-row {
+  display: flex;
+  justify-content: center;
+  padding-top: $minPadding*2;
+}
+
+@mixin a-sign-in__card {
+  width: calc(100% - #{$minPadding * 2});
+}
+
+@mixin center-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: $minMobileWidth;
+
+  @include respond-to(low-tablet) {
+    @include a-sign-in__card;
+  }
+  @include respond-to(mobile) {
+    @include a-sign-in__card;
+  }
+}

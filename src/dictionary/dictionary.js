@@ -1,12 +1,13 @@
 const dictionary = {
-  login: 'Пользователь',
-  password: 'Пароль',
-  signIn: 'Войти',
+  login: 'Username',
+  password: 'Password',
+  signIn: 'Login',
   title: 'WS Time',
-  required: 'Обязательное поле',
+  required: 'Required',
   connected: 'Connected',
   disconnected: 'Disconnected',
-  logout: 'logout',
+  logout: 'Logout',
+  gitTitle: '@fmva',
 };
 
 export const getDictionaryValue = (value) => (dictionary[value] !== undefined ? dictionary[value] : `$${value}$`);

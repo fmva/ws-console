@@ -3,7 +3,7 @@
 .notification-window {
   background-color: $errorMessageColor;
   padding: 10px;
-  box-shadow: 0 0 5px $boxShadowColor;
+  box-shadow: $boxShadow;
   border-radius: $mainBorderRadius;
 
   &__header {

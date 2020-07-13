@@ -1,2 +1,21 @@
+@import '../../styles/vars';
+@import '../../styles/libs';
+
 .main {
+  @extend %main;
+  &__card {
+    width: 300px;
+    @include center-card;
+  }
+
+  &__row {
+    @extend %row;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__git-row {
+    @extend %link-row;
+  }
+
 }

@@ -1,0 +1,9 @@
+@import '../../styles/vars';
+
+.login-error-message {
+  padding: $minPadding;
+  background: $errorMessageFieldColor;
+  text-align: center;
+  border-radius: $mainBorderRadius;
+  color: $errorMessageTextColor;
+}

@@ -1,3 +1,16 @@
+@import '../../styles/vars';
+
 .connection-status {
+  padding: $minPadding;
+  color: $infoCardColor;
+  border-radius: $mainBorderRadius;
+
+  &_connected {
+    background: $validMessageTextColor;
+  }
+
+  &_disconnected {
+    background: $errorMessageTextColor;
+  }
 
 }

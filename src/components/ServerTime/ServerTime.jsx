@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 // styles
 import './ServerTime.scss';
 
-const M_SEC = 1000;
-
 export const ServerTime = ({ time, isConnection }) => (
   <>
     {time !== '' ? (
@@ -13,7 +11,7 @@ export const ServerTime = ({ time, isConnection }) => (
   </>
 );
 
-// ServerTime.propTypes = {
-//   time: PropTypes.number.isRequired,
-//   isConnection: PropTypes.bool.isRequired,
-// };
+ServerTime.propTypes = {
+  time: PropTypes.string.isRequired,
+  isConnection: PropTypes.bool.isRequired,
+};

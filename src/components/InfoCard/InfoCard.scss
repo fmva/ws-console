@@ -1,0 +1,13 @@
+@import '../../styles/vars.scss';
+
+.info-card {
+  background-color: $infoCardColor;
+  box-shadow: $boxShadow;
+  border-radius: 5px;
+  padding: $highMediumPadding $mediumPadding;
+
+  &__title {
+    padding-bottom: $minPadding;
+  }
+
+}

@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// components
+import { Spinner } from '../Spiner';
 // styles
 import './CustomButton.scss';
 
-export const CustomButton = ({ title, type, loading, onClick }) => {
-  return (
-    <button className='custom-button' type={type} onClick={onClick}>
-      {loading ? 'loading' : title}
-    </button>
-  );
-};
+export const CustomButton = ({ title, type, loading, onClick }) => (
+  <button className='custom-button' type={type} onClick={onClick}>
+    {loading ? <Spinner /> : title}
+  </button>
+);
 
 CustomButton.defaultProps = {
   type: 'submit',

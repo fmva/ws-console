@@ -1,0 +1,19 @@
+@import '../../styles/vars';
+
+.custom-button {
+  height: $elementHeight;
+  background: $buttonBackgroundColor;
+  border-radius: $mainBorderRadius;
+  font-size: $mainSize;
+  padding: $minPadding $mediumPadding;
+  color: $infoCardColor;
+
+  &:hover {
+    background: $buttonHoverBackgroundColor;
+  }
+
+  &:active {
+    background: $buttonActiveBackgroundColor
+  }
+
+}

@@ -1,0 +1,43 @@
+@import '../../styles/vars';
+
+.custom-input {
+  &__title {
+    padding-bottom: $minPadding;
+
+    &-error {
+      color: $errorMessageColor;
+    }
+  }
+  &__input {
+    width: 100%;
+    height: $elementHeight;
+    box-sizing: border-box;
+    background-color: $infoCardColor;
+    border-radius: $mainBorderRadius;
+    border: $inputBorder;
+    outline: none;
+    padding: $smallPadding $minPadding;
+    font-size: $inputSize;
+
+    &:hover {
+      border: $inputHoverBorder;
+    }
+
+    &:focus {
+      border: $inputFocusBorder;
+    }
+
+    &-error {
+      border: $inputErrorBorder;
+      &:hover,
+      &:focus {
+        border: $inputErrorBorder;
+      }
+    }
+  }
+
+  &__error {
+    padding-top: $smallPadding;
+    color: $errorMessageColor;
+  }
+}

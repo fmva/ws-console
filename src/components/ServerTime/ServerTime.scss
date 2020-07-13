@@ -1,4 +1,14 @@
+@import '../../styles/vars';
+
 .server-time {
-  &-disconnected {
+  padding: $minPadding;
+  width: 100%;
+  border-radius: $mainBorderRadius;
+  border: $inputBorder;
+  text-align: center;
+
+  &_disconnected {
+    background-color: $errorMessageFieldColor;
+    color: rgba(175, 141, 141, 0.5);
   }
 }

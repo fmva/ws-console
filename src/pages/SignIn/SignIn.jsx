@@ -77,29 +77,37 @@ export const SignIn = () => {
     <div>
       <form className='sign-in__form' onSubmit={onLogIn}>
         <LoginErrorMessage message={authError} />
-        <CustomInput
-          title={getDictionaryValue('login')}
-          value={login}
-          onChange={onLoginChange}
-          errorMessage={errors.login}
-          disabled={authLoading}
-        />
-        <CustomInput
-          title={getDictionaryValue('password')}
-          value={password}
-          type='password'
-          onChange={onPasswordChange}
-          errorMessage={errors.password}
-          disabled={authLoading}
-        />
-        <CustomButton title={getDictionaryValue('signIn')} loading={authLoading} />
+        <div className='sign-in__row'>
+          <CustomInput
+            title={getDictionaryValue('login')}
+            value={login}
+            onChange={onLoginChange}
+            errorMessage={errors.login}
+            disabled={authLoading}
+          />
+        </div>
+        <div className='sign-in__row'>
+          <CustomInput
+            title={getDictionaryValue('password')}
+            value={password}
+            type='password'
+            onChange={onPasswordChange}
+            errorMessage={errors.password}
+            disabled={authLoading}
+          />
+        </div>
+        <div className='sign-in__row'>
+          <CustomButton title={getDictionaryValue('signIn')} loading={authLoading} />
+        </div>
       </form>
     </div>
   );
 
   return (
     <main className='sign-in'>
-      <InfoCard title={getDictionaryValue('title')} component={mainComponent} />
+      <div className='sign-in__card'>
+        <InfoCard title={getDictionaryValue('title')} component={mainComponent} />
+      </div>
     </main>
   );
 };

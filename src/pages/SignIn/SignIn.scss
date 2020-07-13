@@ -1,2 +1,15 @@
+@import '../../styles/vars';
+@import '../../styles/libs';
+
 .sign-in {
+  @extend %main;
+  &__card {
+    width: 500px;
+    @include center-card;
+  }
+
+  &__row {
+    @extend %row;
+  }
+
 }

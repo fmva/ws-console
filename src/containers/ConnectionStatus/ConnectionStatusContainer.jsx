@@ -10,6 +10,10 @@ import { $connectedStatus } from '../../store/main';
 export const ConnectionStatusContainer = () => {
   const connectedStatus = useStore($connectedStatus);
   return (
-    <ConnectionStatus status={connectedStatus ? getDictionaryValue('connected') : getDictionaryValue('disconnected')} />
+    <ConnectionStatus
+      status={connectedStatus}
+      connectedTitle={getDictionaryValue('connected')}
+      disconnectedTitle={getDictionaryValue('disconnected')}
+    />
   );
 };
