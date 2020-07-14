@@ -1,4 +1,4 @@
 export default {
-  signIn: '/sign-in',
-  main: '/',
+  signIn: '/ws-console/sign-in',
+  main: '/ws-console/',
 };

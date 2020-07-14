@@ -18,7 +18,7 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path={routes.signIn} component={SignIn} />
-        <PrivateRouteContainer path={routes.main} component={Main} />
+        <PrivateRouteContainer path={[routes.main, '/']} component={Main} />
       </Switch>
     </BrowserRouter>
   );
