@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './CustomLink.scss';
 
 export const CustomLink = ({ title, link }) => (
-  <a className='custom-link' href={link} target='_blank' rel='noreferrer'>
+  <a className='custom-link' href={link} target='_blank' rel='noopener noreferrer'>
     {title}
   </a>
 );
