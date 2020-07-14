@@ -20,12 +20,9 @@ export const subscribeFx = createEffect({
       setStatusConnected();
       setDisconnectEvents(setDisconnectData, timeoutWebsocket);
     };
-    const onSocketClose = (code, wasClean, reason) => {
-      // setStatusDisconnected();
-    };
     try {
       const result = await subscribe();
-      startSockets(result.data.url, onSocketMessage, onSocketClose);
+      startSockets(result.data.url, onSocketMessage);
     } catch (err) {
       closeSocket.close();
       showErrors('subscribeFx', err);
