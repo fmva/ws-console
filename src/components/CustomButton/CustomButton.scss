@@ -1,4 +1,5 @@
 @import '../../styles/vars';
+@import '../../styles/adaptiveness';
 
 .custom-button {
   height: $elementHeight;
@@ -7,6 +8,10 @@
   font-size: $mainSize;
   padding: $minPadding $mediumPadding;
   color: $infoCardColor;
+
+  @include respond-to(mobile) {
+   width: 100%;
+  }
 
   &:hover {
     background: $buttonHoverBackgroundColor;

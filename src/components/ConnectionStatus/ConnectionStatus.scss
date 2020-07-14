@@ -1,9 +1,15 @@
 @import '../../styles/vars';
+@import '../../styles/adaptiveness';
 
 .connection-status {
   padding: $minPadding;
   color: $infoCardColor;
   border-radius: $mainBorderRadius;
+  text-align: center;
+
+  @include respond-to(mobile) {
+    width: 100%;
+  }
 
   &_connected {
     background: $validMessageTextColor;
@@ -12,5 +18,4 @@
   &_disconnected {
     background: $errorMessageTextColor;
   }
-
 }

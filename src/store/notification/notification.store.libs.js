@@ -6,7 +6,6 @@ import { isTokenValid } from '../../utils';
 
 export const showErrors = (title, err) => {
   if (err && err.response && err.response.status && !isTokenValid(err.response.status)) {
-    console.log('showErrors err.response.status', err.response.status);
     removeToken();
     return;
   }

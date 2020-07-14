@@ -13,26 +13,20 @@ export const subscribeFx = createEffect({
       setStatusDisconnected();
     };
     const timeoutWebsocket = () => {
-      console.log('timeoutWebsocket');
       subscribeFx();
     };
     const onSocketMessage = (data) => {
-      console.log('onMessage', data, JSON.parse(data).server_time);
       setServerTime(JSON.parse(data).server_time);
       setStatusConnected();
       setDisconnectEvents(setDisconnectData, timeoutWebsocket);
     };
     const onSocketClose = (code, wasClean, reason) => {
-      console.log('onSocketClose', code, wasClean, reason);
       // setStatusDisconnected();
     };
     try {
       const result = await subscribe();
-      console.log('subscribe data', result.data);
-
       startSockets(result.data.url, onSocketMessage, onSocketClose);
     } catch (err) {
-      console.log('subscribe error', err);
       closeSocket.close();
       showErrors('subscribeFx', err);
     }
